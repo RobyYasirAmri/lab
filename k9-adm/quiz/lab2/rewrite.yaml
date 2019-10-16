@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: my-website-rewrite
+  namespace: default
+spec:
+  rules:
+  - host: my.website.com
+    http:
+      paths:
+      - backend:
+          serviceName: personal-site-52
+          servicePort: 80
+        path: /

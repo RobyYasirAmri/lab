@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personal-site-52
+spec:
+  replicas: 1
+  selector:
+   matchLabels:
+    app: personal-site-52
+  template:
+    metadata:
+      labels:
+        app: personal-site-52
+    spec:
+      containers:
+      - name: personal-site-52
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
